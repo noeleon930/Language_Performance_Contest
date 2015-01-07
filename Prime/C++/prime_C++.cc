@@ -47,7 +47,7 @@ int main()
 	
 	cout << "--------------------------------" << endl;
 	cout << "targetNumber is " << targetNumber << endl;
-	cout << "elapsedTime is " << elapsedTime / 1000 << " ms" << endl;
+	cout << "elapsedTime is " << (float)elapsedTime / 1000 << " ms" << endl;
 	cout << "--------------------------------" << endl;
 	
 	return 0;
