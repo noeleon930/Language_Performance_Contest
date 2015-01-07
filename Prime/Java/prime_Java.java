@@ -31,7 +31,7 @@ public class prime_Java
                 }
             }
             
-            if(isPrime) System.out.println("i");
+            if(isPrime) System.out.println(i);
         }
  
         /*Timer stop!*/
