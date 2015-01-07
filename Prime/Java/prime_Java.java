@@ -38,7 +38,7 @@ public class prime_Java
         long end = System.nanoTime();
 
         /*Count the elapsed time*/
-        long elapsedTime = ((end - start) / 1000);
+        long elapsedTime = ((end - start) / 1000000);
  
         System.out.println("--------------------------------");
         System.out.println("targetNumber is " + targetNumber);
