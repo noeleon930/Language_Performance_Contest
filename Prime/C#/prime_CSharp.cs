@@ -14,37 +14,41 @@ namespace prime_CSharp
 
             /*Initialize the bool*/
             bool isPrime;
-        
+
+            /*Pre-set the sqrt of targetNumber*/
+            int sqrt;
+
             /*Smallest prime number*/
             Console.WriteLine("2");
 
             /*Try from 3 to targetNumber.
             And the step is 2.
             Except 2, any other prime numbers are all odd.*/
-            for(int i = 3; i < targetNumber; i+=2)
+            for (int i = 3; i < targetNumber; i += 2)
             {
-                /*Reset to true in every new loop*/
+                /*Reset in every new loop*/
                 isPrime = true;
-            
+                sqrt = (int)Math.Sqrt(i);
+
                 /*At most check to its sqrt.*/
-                for(int j = 3; j <= Math.Sqrt(i); j++)
+                for (int j = 3; j <= sqrt; j++)
                 {
-                    if(i % j == 0)
+                    if (i % j == 0)
                     {
                         isPrime = false;
                         break;
                     }
                 }
-            
-                if(isPrime) Console.WriteLine(i);
+
+                if (isPrime) Console.WriteLine(i);
             }
- 
+
             /*Timer stop!*/
             start.Stop();
 
             /*Count the elapsed time*/
             var elapsedTime = start.ElapsedMilliseconds;
- 
+
             Console.WriteLine("--------------------------------");
             Console.WriteLine("targetNumber is " + targetNumber);
             Console.WriteLine("elapsedTime is " + elapsedTime + " ms");

@@ -9,6 +9,9 @@ start = time.process_time()
 # Initialize the bool
 isPrime = True
 
+# Pre-set the sqrt of targetNumber
+_sqrt = 0
+
 # Smallest prime number
 print('2')
 
@@ -16,11 +19,12 @@ print('2')
 # And the step is 2.
 # Except 2, any other prime numbers are all odd.
 for i in range (3, targetNumber + 1, 2):
-	# Reset to true in every new loop
+	# Reset in every new loop
 	isPrime = True
+	_sqrt = int(math.sqrt(i))
 	
 	# At most check to its sqrt.
-	for j in range (3, int(math.sqrt(i)) + 1):
+	for j in range (3, _sqrt + 1):
 
 		if (i % j) == 0:
 			isPrime = False

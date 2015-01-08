@@ -14,6 +14,9 @@ int main()
 	
 	/*Initialize the bool*/
 	bool isPrime;
+	
+	/*Pre-set the sqrt of targetNumber*/
+    int _sqrt;
 
 	/*Smallest prime number*/
 	cout << "2" << endl;
@@ -23,11 +26,12 @@ int main()
 	Except 2, any other prime numbers are all odd.*/
 	for(int i = 3; i < targetNumber; i+=2)
 	{
-		/*Reset to true in every new loop*/
+		/*Reset in every new loop*/
 		isPrime = true;
+		_sqrt = sqrt(i);
 
 		/*At most check to its sqrt.*/
-		for(int j = 3; j <= sqrt(i); j++)
+		for(int j = 3; j <= _sqrt; j++)
 		{
 			if(i % j == 0)
 			{

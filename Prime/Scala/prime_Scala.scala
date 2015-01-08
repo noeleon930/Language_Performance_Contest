@@ -10,6 +10,9 @@ object prime_Scala
 		/*Initialize the bool*/
 		var isPrime = true
 
+		/*Pre-set the sqrt of targetNumber*/
+        var _sqrt = 0
+
 		/*Smallest prime number*/
 		Console.println("2")
 
@@ -18,11 +21,12 @@ object prime_Scala
         Except 2, any other prime numbers are all odd.*/
 		for (i <- 3 until(targetNumber, 2))
 		{
-			/*Reset to true in every new loop*/
+			/*Reset in  every new loop*/
 			isPrime = true
+			_sqrt = Math.sqrt(i).toInt
 
 			/*At most check to its sqrt.*/
-			(3 to Math.sqrt(i).toInt).toStream.takeWhile((j: Int) => isPrime == true).foreach((j: Int) => if(i % j == 0) isPrime = false)
+			(3 to _sqrt).toStream.takeWhile((j: Int) => isPrime == true).foreach((j: Int) => if(i % j == 0) isPrime = false)
 			if(isPrime) Console.println(i)
 		}
 
