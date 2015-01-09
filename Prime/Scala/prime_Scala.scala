@@ -2,16 +2,18 @@ object prime_Scala
 {
 	val targetNumber = 10000
 
-	def checkPrime(i: Int, j: Int, max: Int): Boolean =
+	/*Set global to improve recursive performance*/
+	var _sqrt = 0
+
+	def checkPrime(i: Int, j: Int)
 	{
-		if(j > max)
+		if(j > _sqrt)
 		{
-			true
+			Console.println(i)
 		}
 		else
 		{
-			if(i % j == 0) false
-			else checkPrime(i, j + 1, max)
+			if(i % j != 0) checkPrime(i, j + 1)
 		}
 	}
 
@@ -19,12 +21,6 @@ object prime_Scala
 	{
 		/*Timer start!*/
 		val start = System.nanoTime()
-
-		/*Initialize the bool*/
-		var isPrime = true
-
-		/*Pre-set the sqrt of targetNumber*/
-        var _sqrt = 0
 
 		/*Smallest prime number*/
 		Console.println("2")
@@ -38,7 +34,7 @@ object prime_Scala
 			_sqrt = Math.sqrt(i).toInt
 
 			/*At most check to its sqrt.*/
-			if(checkPrime(i, 3, _sqrt)) Console.println(i)
+			checkPrime(i, 3)
 		}
 
 		/*Timer stop!*/

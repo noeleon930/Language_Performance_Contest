@@ -1229,5 +1229,5 @@
 9973
 --------------------------------
 targetNumber is 10000
-elapsedTime is 101 ms
+elapsedTime is 98 ms
 --------------------------------
