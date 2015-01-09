@@ -9,7 +9,7 @@ start = time.process_time()
 # Initialize the bool
 isPrime = True
 
-# Pre-set the sqrt of targetNumber
+# The sqrt of targetNumber
 _sqrt = 0
 
 # Smallest prime number

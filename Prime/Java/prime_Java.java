@@ -10,7 +10,7 @@ public class prime_Java
         /*Initialize the bool*/
         boolean isPrime;
 
-        /*Pre-set the sqrt of targetNumber*/
+        /*The sqrt of targetNumber*/
         double _sqrt;
         
         /*Smallest prime number*/

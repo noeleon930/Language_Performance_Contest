@@ -15,7 +15,7 @@ namespace prime_CSharp
             /*Initialize the bool*/
             bool isPrime;
 
-            /*Pre-set the sqrt of targetNumber*/
+            /*The sqrt of targetNumber*/
             int sqrt;
 
             /*Smallest prime number*/

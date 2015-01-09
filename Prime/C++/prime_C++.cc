@@ -15,7 +15,7 @@ int main()
 	/*Initialize the bool*/
 	bool isPrime;
 	
-	/*Pre-set the sqrt of targetNumber*/
+	/*The sqrt of targetNumber*/
     int _sqrt;
 
 	/*Smallest prime number*/
