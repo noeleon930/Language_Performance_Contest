@@ -2,6 +2,19 @@ object prime_Scala
 {
 	val targetNumber = 10000
 
+	def checkPrime(i: Int, j: Int, max: Int): Boolean =
+	{
+		if(j > max)
+		{
+			true
+		}
+		else
+		{
+			if(i % j == 0) false
+			else checkPrime(i, j + 1, max)
+		}
+	}
+
 	def main(args: Array[String])
 	{
 		/*Timer start!*/
@@ -22,12 +35,10 @@ object prime_Scala
 		for (i <- 3 until(targetNumber, 2))
 		{
 			/*Reset in  every new loop*/
-			isPrime = true
 			_sqrt = Math.sqrt(i).toInt
 
 			/*At most check to its sqrt.*/
-			(3 to _sqrt).toStream.takeWhile((j: Int) => isPrime == true).foreach((j: Int) => if(i % j == 0) isPrime = false)
-			if(isPrime) Console.println(i)
+			if(checkPrime(i, 3, _sqrt)) Console.println(i)
 		}
 
 		/*Timer stop!*/
