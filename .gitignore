@@ -1,2 +1,4 @@
 *.exe
 *.class
+*.lock
+Prime/Rust/target
