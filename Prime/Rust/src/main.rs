@@ -24,11 +24,11 @@ fn main() {
         // Reset in every new loop
         let mut is_prime = true;
         let sqrt = i.to_f64()
-		            .unwrap()
-					.sqrt()
-					.floor()
-					.to_i32()
-					.unwrap();
+                    .unwrap()
+                    .sqrt()
+                    .floor()
+                    .to_i32()
+                    .unwrap();
         
         // At most check to its sqrt.
         for j in 3..(sqrt + 1) {
