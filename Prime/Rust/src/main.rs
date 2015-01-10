@@ -1,6 +1,6 @@
 #![allow(unstable)]
 
-extern crate time;
+extern crate nano_time;
 
 use std::num::Float;
 use std::num::ToPrimitive;
@@ -9,7 +9,7 @@ const TARGET_NUMBER: i32 = 10000;
 
 fn main() {
     // Timer start!
-    let start = time::precise_time_ns();
+    let start = nano_time::nano_time();
     
     // Smallest prime number
     println!("2");
@@ -46,10 +46,10 @@ fn main() {
     }
     
     // Timer stop!
-    let end = time::precise_time_ns();
+    let end = nano_time::nano_time();
     
     // Count the elapsed time
-    let elapsed_time = (end - start) / 1000000;
+    let elapsed_time = (end - start).to_f64().unwrap() / 1000000.;
     
     println!("--------------------------------");
     println!("targetNumber is {}", TARGET_NUMBER);

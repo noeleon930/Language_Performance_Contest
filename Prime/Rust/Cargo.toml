@@ -10,4 +10,4 @@ name = "Rust"
 
 [dependencies]
 
-time = "*"
+nano_time = "*"
