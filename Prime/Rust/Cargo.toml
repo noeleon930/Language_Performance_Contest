@@ -1,0 +1,13 @@
+[package]
+
+name = "Rust"
+version = "0.0.1"
+authors = ["Andy Shiue <andyshiue851019@gmail.com>"]
+
+[[bin]]
+
+name = "Rust"
+
+[dependencies]
+
+nano_time = "*"
