@@ -1,21 +1,9 @@
-object prime_Scala
+object prime_Loop_Scala
 {
-	val targetNumber = 10000
+	val targetNumber = 1000000
 
 	/*Set global to improve recursive performance*/
 	var _sqrt = 0
-
-	def checkPrime(i: Int, j: Int)
-	{
-		if(j > _sqrt)
-		{
-			Console.println(i)
-		}
-		else
-		{
-			if(i % j != 0) checkPrime(i, j + 1)
-		}
-	}
 
 	def main(args: Array[String])
 	{
@@ -23,19 +11,29 @@ object prime_Scala
 		val start = System.nanoTime()
 
 		/*Smallest prime number*/
-		Console.println("2")
+		// Console.println("2")
 
 		/*Try from 3 to targetNumber.
         And the step is 2.
         Except 2, any other prime numbers are all odd.*/
-		for (i <- 3 until(targetNumber, 2))
+		var i = 3
+		while(i <= targetNumber)
 		{
 			/*Reset in  every new loop*/
+			var isPrime = true
+			var j = 3
 			_sqrt = Math.sqrt(i).toInt
 
-			/*At most check to its sqrt.*/
-			checkPrime(i, 3)
-		}
+			while(j <= _sqrt && isPrime == true)
+			{
+				if(i % j == 0) isPrime = false
+				j = j + 1
+			}
+
+			// if(isPrime) Console.println(i)
+
+			i = i + 2
+		}		
 
 		/*Timer stop!*/
 		val end = System.nanoTime()

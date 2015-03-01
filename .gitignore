@@ -2,3 +2,4 @@
 *.class
 *.lock
 Prime/Rust/target
+*.pyo

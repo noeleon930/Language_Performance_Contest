@@ -1,7 +1,7 @@
 import math
 import time
 
-targetNumber = 10000
+targetNumber = 1000000
 
 # Timer start!
 start = time.process_time()
@@ -13,25 +13,27 @@ isPrime = True
 _sqrt = 0
 
 # Smallest prime number
-print('2')
+# print('2')
 
 # Try from 3 to targetNumber.
 # And the step is 2.
 # Except 2, any other prime numbers are all odd.
-for i in range (3, targetNumber + 1, 2):
-	# Reset in every new loop
+i = 3
+while(i <= targetNumber):
+	# Reset in  every new loop
 	isPrime = True
+	j = 3
 	_sqrt = int(math.sqrt(i))
-	
-	# At most check to its sqrt.
-	for j in range (3, _sqrt + 1):
 
-		if (i % j) == 0:
+	while(j <= _sqrt and isPrime == True):
+		if(i % j == 0):
 			isPrime = False
-			break
-	
-	if (isPrime):
-		print(i)
+		j = j + 1
+
+	# if (isPrime):
+	# 	print(i)
+
+	i = i + 2		
 
 # Timer stop!
 end = time.process_time()

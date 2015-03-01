@@ -1,41 +1,48 @@
-public class prime_Java
+public class prime_TailRecursion_Java
 {
-    final static int targetNumber = 10000;
+    final static int targetNumber = 1000000;
+
+    /*Initialize the bool*/
+    static boolean isPrime;
+
+    /*The sqrt of targetNumber*/
+    static double _sqrt;
+
+    /*Tail recursion*/
+    public static void checkPrime(int i, int j)
+    {
+    	if(j > _sqrt)
+		{
+			// System.out.println(i);
+		}
+		else
+		{
+			if(i % j != 0) checkPrime(i, j + 1);
+		}
+    }
 
     public static void main(String[] args)
     {
         /*Timer start!*/
         long start = System.nanoTime();
 
-        /*Initialize the bool*/
-        boolean isPrime;
-
-        /*The sqrt of targetNumber*/
-        double _sqrt;
-        
         /*Smallest prime number*/
-        System.out.println("2");
+        // System.out.println("2");
 
         /*Try from 3 to targetNumber.
         And the step is 2.
         Except 2, any other prime numbers are all odd.*/
-        for(int i = 3; i < targetNumber; i+=2)
+        int i = 3;
+        while(i < targetNumber)
         {
             /*Reset in every new loop*/
-            isPrime = true;
             _sqrt = Math.sqrt(i);
+			
+			/*At most check to its sqrt.*/
+			checkPrime(i, 3);
 
-            /*At most check to its sqrt.*/
-            for(int j = 3; j <= _sqrt; j++)
-            {
-                if(i % j == 0)
-                {
-                    isPrime = false;
-                    break;
-                }
-            }
-            
-            if(isPrime) System.out.println(i);
+			/*For next loop*/
+            i += 2;
         }
  
         /*Timer stop!*/
